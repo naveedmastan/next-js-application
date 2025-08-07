@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^2.2.7",
     "@heroicons/react": "^2.2.0",
+    "@nextui-org/react": "^2.6.11",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@tanstack/react-query": "^5.84.1",
@@ -28,6 +29,7 @@
     "axios": "^1.11.0",
     "clsx": "^2.1.1",
     "cssnano": "^7.1.0",
+    "framer-motion": "^12.23.12",
     "jsdom": "^26.1.0",
     "lodash": "^4.17.21",
     "msw": "^2.10.4",
