@@ -1,27 +1,27 @@
-** @type {import('next').NextConfig} */
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable SPA mode - disable server-side rendering
+  // Enable static export for S3/CloudFront deployment
   output: 'export',
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
-  distDir: 'dist',
+  distDir: 'out',
   
   // Disable image optimization for static export
   images: {
     unoptimized: true
   },
 
-  // Configure for client-side only
+  // Remove asset prefix to work with S3/CloudFront
+  // assetPrefix: '',
+  
+  // Ensure all routes are client-side
   experimental: {
-    appDir: true
+    missingSuspenseWithCSRBailout: false,
   },
-
-  // Asset prefix for static hosting
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/app' : '',
 
   // Environment variables
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api'
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || ''
   }
 }
 
